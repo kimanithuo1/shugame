@@ -1,37 +1,37 @@
 import { Link } from "react-router-dom"
 import Layout from "../components/Layout"
 import ProductCard from "../components/ProductCard"
+import TrendingBrands from "../components/TrendingBrands"
+import PopularCategories from "../components/PopularCategories"
 import { FiArrowRight } from "react-icons/fi"
 
 const HomePage = () => {
   const featuredProducts = [
     {
       id: 1,
-      name: "Air Max 90",
+      name: "Nike Air Max 90",
       price: 129.99,
       image:
-        "https://images.unsplash.com/photo-1605348532760-6753d2c43329?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
+        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/a42a5d53-2f99-4e78-a081-9d07a2d0774a/air-max-90-mens-shoes-6n3vKB.png",
     },
     {
       id: 2,
-      name: "Yeezy Boost 350",
+      name: "Adidas Yeezy Boost 350",
       price: 219.99,
-      image:
-        "https://images.unsplash.com/photo-1631984564919-1f6b2313a71c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80",
+      image: "https://image.goat.com/attachments/product_template_pictures/images/000/052/785/original/6172.png",
     },
     {
       id: 3,
-      name: "Jordan 1 Retro",
+      name: "Jordan 1 Retro High",
       price: 169.99,
-      image:
-        "https://images.unsplash.com/photo-1600269452121-4f2416e55c28?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1365&q=80",
+      image: "https://secure-images.nike.com/is/image/DotCom/CT0418_018_A_PREM?$SNKRS_COVER_WD$&align=0,1",
     },
     {
       id: 4,
-      name: "Adidas NMD",
+      name: "Adidas NMD R1",
       price: 139.99,
       image:
-        "https://images.unsplash.com/photo-1587563871167-1ee9c731aefb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1431&q=80",
+        "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/96a5ae250f1c4bad9eb3aba0014141ef_9366/NMD_R1_Shoes_Black_GZ9256_01_standard.jpg",
     },
   ]
 
@@ -41,28 +41,27 @@ const HomePage = () => {
       name: "Nike Dunk Low",
       price: 99.99,
       image:
-        "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1587&q=80",
+        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/350e7f3a-979a-402b-9396-a8a998dd76ab/dunk-low-mens-shoes-NGpz5q.png",
     },
     {
       id: 6,
       name: "Converse Chuck 70",
       price: 79.99,
       image:
-        "https://images.unsplash.com/photo-1607522370275-f14206abe5d3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1421&q=80",
+        "https://www.converse.com/dw/image/v2/BCZC_PRD/on/demandware.static/-/Sites-cnv-master-catalog/default/dw715cd415/images/a_107/162058C_A_107X1.jpg",
     },
     {
       id: 7,
       name: "Vans Old Skool",
       price: 59.99,
-      image:
-        "https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1398&q=80",
+      image: "https://images.vans.com/is/image/Vans/VN000D3HY28-HERO?$583x583$",
     },
     {
       id: 8,
       name: "Puma RS-X",
       price: 109.99,
       image:
-        "https://images.unsplash.com/photo-1608231387042-66d1773070a5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80",
+        "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_2000,h_2000/global/368845/01/sv01/fnd/PNA/fmt/png/RS-X-Reinvention-Men's-Sneakers",
     },
   ]
 
@@ -82,7 +81,7 @@ const HomePage = () => {
           <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">Step into Style</h1>
           <p className="text-xl md:text-2xl text-[#CCCCCC] mb-8">Discover the latest in streetwear and sneakers</p>
           <Link
-            to="/category/sneakers"
+            to="/products"
             className="bg-gradient-to-r from-[#FF6B6B] to-[#FF8E53] text-white font-bold py-3 px-8 rounded-full text-lg hover:from-[#FF8E53] hover:to-[#FF6B6B] transition-all duration-300 inline-flex items-center"
           >
             Shop Now <FiArrowRight className="ml-2" />
@@ -91,6 +90,17 @@ const HomePage = () => {
       </section>
 
       <div className="container mx-auto px-4 py-16">
+        {/* Trending Brands Section */}
+        <section className="mb-16">
+          <h2 className="text-3xl font-bold text-[#4ECDC4] mb-8">Trending Brands</h2>
+          <TrendingBrands />
+          <div className="text-center mt-8">
+            <Link to="/brands" className="text-[#FF6B6B] hover:text-[#FF8E53] font-semibold">
+              View All Brands <FiArrowRight className="inline ml-2" />
+            </Link>
+          </div>
+        </section>
+
         {/* Featured Products Section */}
         <section className="mb-16">
           <h2 className="text-3xl font-bold text-[#4ECDC4] mb-8">Featured Products</h2>
@@ -99,6 +109,17 @@ const HomePage = () => {
               <ProductCard key={product.id} product={product} />
             ))}
           </div>
+          <div className="text-center mt-8">
+            <Link to="/products" className="text-[#FF6B6B] hover:text-[#FF8E53] font-semibold">
+              View All Products <FiArrowRight className="inline ml-2" />
+            </Link>
+          </div>
+        </section>
+
+        {/* Popular Categories Section */}
+        <section className="mb-16">
+          <h2 className="text-3xl font-bold text-[#4ECDC4] mb-8">Popular Categories</h2>
+          <PopularCategories />
         </section>
 
         {/* New Arrivals Section */}
@@ -108,6 +129,11 @@ const HomePage = () => {
             {newArrivals.map((product) => (
               <ProductCard key={product.id} product={product} />
             ))}
+          </div>
+          <div className="text-center mt-8">
+            <Link to="/new-releases" className="text-[#FF6B6B] hover:text-[#FF8E53] font-semibold">
+              View All New Releases <FiArrowRight className="inline ml-2" />
+            </Link>
           </div>
         </section>
 
@@ -123,7 +149,7 @@ const HomePage = () => {
               to="/about"
               className="text-[#4ECDC4] font-semibold hover:text-[#6BFFB3] transition-colors duration-300"
             >
-              Learn More About Us
+              Learn More About Us <FiArrowRight className="inline ml-2" />
             </Link>
           </div>
         </section>
