@@ -2,134 +2,121 @@ import { Link } from "react-router-dom"
 import { FiInstagram, FiTwitter, FiFacebook } from "react-icons/fi"
 
 const Footer = () => {
+  const styles = {
+    footer: "bg-[#F3E5D6] mt-16",
+    container: "container mx-auto px-4 py-12",
+    title: "text-[#79483f] font-bold text-xl mb-4",
+    description: "text-[#79483f]/80",
+    sectionTitle: "text-[#79483f] font-semibold mb-4",
+    link: "text-[#79483f]/80 hover:text-[#E0B1AB] transition-colors",
+    socialIcon: "text-[#79483f] hover:text-[#E0B1AB] transition-colors",
+    border: "border-t border-[#E0B1AB]",
+    copyright: "text-[#79483f]/70 text-sm",
+  }
+
   return (
-    <footer className="bg-[#1A1A1A] py-12">
-      <div className="container mx-auto px-4">
+    <footer className={styles.footer}>
+      <div className={styles.container}>
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
-            <h3 className="text-[#FF6B6B] font-bold text-xl mb-4">ShuGame</h3>
-            <p className="text-[#CCCCCC]">Your ultimate destination for streetwear and sneakers.</p>
+            <h3 className={styles.title}>ShuGame</h3>
+            <p className={styles.description}>Your ultimate destination for streetwear and sneakers.</p>
           </div>
+
           <div>
-            <h4 className="text-white font-semibold mb-4">Shop</h4>
+            <h4 className={styles.sectionTitle}>Shop</h4>
             <ul className="space-y-2">
               <li>
-                <Link to="/products" className="text-[#CCCCCC] hover:text-[#4ECDC4]">
+                <Link to="/products" className={styles.link}>
                   All Products
                 </Link>
               </li>
               <li>
-                <Link to="/category/sneakers" className="text-[#CCCCCC] hover:text-[#4ECDC4]">
+                <Link to="/category/sneakers" className={styles.link}>
                   Sneakers
                 </Link>
               </li>
               <li>
-                <Link to="/category/streetwear" className="text-[#CCCCCC] hover:text-[#4ECDC4]">
+                <Link to="/category/streetwear" className={styles.link}>
                   Streetwear
                 </Link>
               </li>
               <li>
-                <Link to="/brands" className="text-[#CCCCCC] hover:text-[#4ECDC4]">
+                <Link to="/brands" className={styles.link}>
                   Brands
                 </Link>
               </li>
               <li>
-                <Link to="/new-releases" className="text-[#CCCCCC] hover:text-[#4ECDC4]">
+                <Link to="/new-releases" className={styles.link}>
                   New Releases
                 </Link>
               </li>
               <li>
-                <Link to="/sale" className="text-[#CCCCCC] hover:text-[#4ECDC4]">
+                <Link to="/sale" className={styles.link}>
                   Sale
                 </Link>
               </li>
             </ul>
           </div>
+
           <div>
-            <h4 className="text-white font-semibold mb-4">Help</h4>
+            <h4 className={styles.sectionTitle}>Help</h4>
             <ul className="space-y-2">
               <li>
-                <Link to="/faq" className="text-[#CCCCCC] hover:text-[#4ECDC4]">
+                <Link to="/faq" className={styles.link}>
                   FAQ
                 </Link>
               </li>
               <li>
-                <Link to="/shipping" className="text-[#CCCCCC] hover:text-[#4ECDC4]">
+                <Link to="/shipping" className={styles.link}>
                   Shipping
                 </Link>
               </li>
               <li>
-                <Link to="/returns" className="text-[#CCCCCC] hover:text-[#4ECDC4]">
+                <Link to="/returns" className={styles.link}>
                   Returns
                 </Link>
               </li>
               <li>
-                <Link to="/size-guide" className="text-[#CCCCCC] hover:text-[#4ECDC4]">
+                <Link to="/size-guide" className={styles.link}>
                   Size Guide
                 </Link>
               </li>
               <li>
-                <Link to="/contact" className="text-[#CCCCCC] hover:text-[#4ECDC4]">
+                <Link to="/contact" className={styles.link}>
                   Contact Us
                 </Link>
               </li>
             </ul>
           </div>
+
           <div>
-            <h4 className="text-white font-semibold mb-4">About</h4>
-            <ul className="space-y-2">
-              <li>
-                <Link to="/about" className="text-[#CCCCCC] hover:text-[#4ECDC4]">
-                  About Us
-                </Link>
-              </li>
-              <li>
-                <Link to="/careers" className="text-[#CCCCCC] hover:text-[#4ECDC4]">
-                  Careers
-                </Link>
-              </li>
-              <li>
-                <Link to="/privacy-policy" className="text-[#CCCCCC] hover:text-[#4ECDC4]">
-                  Privacy Policy
-                </Link>
-              </li>
-              <li>
-                <Link to="/terms-of-service" className="text-[#CCCCCC] hover:text-[#4ECDC4]">
-                  Terms of Service
-                </Link>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div className="mt-8 pt-8 border-t border-[#2C2C2C]">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-[#CCCCCC] text-sm">&copy; {new Date().getFullYear()} ShuGame. All rights reserved.</p>
-            <div className="flex space-x-4 mt-4 md:mt-0">
-              <a
-                href="https://instagram.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-[#CCCCCC] hover:text-[#4ECDC4]"
-              >
+            <h4 className={styles.sectionTitle}>Connect</h4>
+            <div className="flex space-x-4 mb-6">
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className={styles.socialIcon}>
                 <FiInstagram size={24} />
               </a>
-              <a
-                href="https://twitter.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-[#CCCCCC] hover:text-[#4ECDC4]"
-              >
+              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className={styles.socialIcon}>
                 <FiTwitter size={24} />
               </a>
-              <a
-                href="https://facebook.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-[#CCCCCC] hover:text-[#4ECDC4]"
-              >
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className={styles.socialIcon}>
                 <FiFacebook size={24} />
               </a>
             </div>
+            <div className="space-y-2">
+              <Link to="/privacy-policy" className={styles.link}>
+                Privacy Policy
+              </Link>
+              <Link to="/terms-of-service" className={styles.link}>
+                Terms of Service
+              </Link>
+            </div>
+          </div>
+        </div>
+
+        <div className={`mt-8 pt-8 ${styles.border}`}>
+          <div className="flex flex-col md:flex-row justify-between items-center">
+            <p className={styles.copyright}>&copy; {new Date().getFullYear()} ShuGame. All rights reserved.</p>
           </div>
         </div>
       </div>

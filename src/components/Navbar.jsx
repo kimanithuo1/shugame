@@ -7,82 +7,88 @@ import { FiSearch, FiUser, FiShoppingCart, FiMenu, FiHeart } from "react-icons/f
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
+  const navStyles = {
+    nav: "sticky top-0 z-50 bg-[#79483f] bg-opacity-95 backdrop-blur-md border-b border-[#E0B1AB]",
+    container: "container mx-auto px-4 py-4",
+    logo: "text-2xl font-bold text-[#F3E5D6]",
+    link: "text-[#F3E5D6] hover:text-[#E0B1AB] transition-colors duration-200",
+    saleLink: "text-[#E0B1AB] hover:text-[#F3E5D6] transition-colors duration-200",
+    mobileMenu: "md:hidden mt-4 py-4 border-t border-[#E0B1AB]",
+    mobileLink: "block py-2 text-[#F3E5D6] hover:text-[#E0B1AB] transition-colors duration-200",
+    iconButton: "text-[#E0B1AB] hover:text-[#F3E5D6] transition-colors duration-200",
+  }
+
   return (
-    <nav className="sticky top-0 z-50 bg-[#1A1A1A] bg-opacity-90 backdrop-blur-md">
-      <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-        <Link to="/" className="text-2xl font-bold text-[#FF6B6B]">
-          ShuGame
-        </Link>
-        <div className="hidden md:flex items-center space-x-6">
-          <Link to="/products" className="text-white hover:text-[#4ECDC4]">
-            All Products
+    <nav className={navStyles.nav}>
+      <div className={navStyles.container}>
+        <div className="flex items-center justify-between">
+          <Link to="/" className={navStyles.logo}>
+            ShuGame
           </Link>
-          <Link to="/category/sneakers" className="text-white hover:text-[#4ECDC4]">
-            Sneakers
-          </Link>
-          <Link to="/category/streetwear" className="text-white hover:text-[#4ECDC4]">
-            Streetwear
-          </Link>
-          <Link to="/brands" className="text-white hover:text-[#4ECDC4]">
-            Brands
-          </Link>
-          <Link to="/new-releases" className="text-white hover:text-[#4ECDC4]">
-            New Releases
-          </Link>
-          <Link to="/sale" className="text-white hover:text-[#4ECDC4]">
-            Sale
-          </Link>
-        </div>
-        <div className="flex items-center space-x-4">
-          <Link to="/search" className="text-white hover:text-[#4ECDC4]">
-            <FiSearch size={20} />
-          </Link>
-          <Link to="/account" className="text-white hover:text-[#4ECDC4]">
-            <FiUser size={20} />
-          </Link>
-          <Link to="/wishlist" className="text-white hover:text-[#4ECDC4]">
-            <FiHeart size={20} />
-          </Link>
-          <Link to="/cart" className="text-white hover:text-[#4ECDC4]">
-            <FiShoppingCart size={20} />
-          </Link>
-          <button className="md:hidden text-white hover:text-[#4ECDC4]" onClick={() => setIsMenuOpen(!isMenuOpen)}>
-            <FiMenu size={24} />
-          </button>
-        </div>
-      </div>
-      {isMenuOpen && (
-        <div className="md:hidden bg-[#2C2C2C] py-4">
-          <div className="container mx-auto px-4 flex flex-col space-y-4">
-            <Link to="/products" className="text-white hover:text-[#4ECDC4]" onClick={() => setIsMenuOpen(false)}>
+
+          <div className="hidden md:flex items-center space-x-8">
+            <Link to="/products" className={navStyles.link}>
               All Products
             </Link>
-            <Link
-              to="/category/sneakers"
-              className="text-white hover:text-[#4ECDC4]"
-              onClick={() => setIsMenuOpen(false)}
-            >
+            <Link to="/category/sneakers" className={navStyles.link}>
               Sneakers
             </Link>
-            <Link
-              to="/category/streetwear"
-              className="text-white hover:text-[#4ECDC4]"
-              onClick={() => setIsMenuOpen(false)}
-            >
+            <Link to="/category/streetwear" className={navStyles.link}>
               Streetwear
             </Link>
-            <Link to="/brands" className="text-white hover:text-[#4ECDC4]" onClick={() => setIsMenuOpen(false)}>
+            <Link to="/brands" className={navStyles.link}>
               Brands
             </Link>
-            <Link to="/new-releases" className="text-white hover:text-[#4ECDC4]" onClick={() => setIsMenuOpen(false)}>
+            <Link to="/new-releases" className={navStyles.link}>
               New Releases
             </Link>
-            <Link to="/sale" className="text-white hover:text-[#4ECDC4]" onClick={() => setIsMenuOpen(false)}>
+            <Link to="/sale" className={navStyles.saleLink}>
               Sale
             </Link>
           </div>
+
+          <div className="flex items-center space-x-6">
+            <Link to="/search" className={navStyles.iconButton}>
+              <FiSearch size={20} />
+            </Link>
+            <Link to="/account" className={navStyles.iconButton}>
+              <FiUser size={20} />
+            </Link>
+            <Link to="/wishlist" className={navStyles.iconButton}>
+              <FiHeart size={20} />
+            </Link>
+            <Link to="/cart" className={navStyles.iconButton}>
+              <FiShoppingCart size={20} />
+            </Link>
+            <button className={navStyles.iconButton} onClick={() => setIsMenuOpen(!isMenuOpen)}>
+              <FiMenu size={24} className="md:hidden" />
+            </button>
+          </div>
         </div>
-      )}
+
+        {isMenuOpen && (
+          <div className={navStyles.mobileMenu}>
+            <Link to="/products" className={navStyles.mobileLink}>
+              All Products
+            </Link>
+            <Link to="/category/sneakers" className={navStyles.mobileLink}>
+              Sneakers
+            </Link>
+            <Link to="/category/streetwear" className={navStyles.mobileLink}>
+              Streetwear
+            </Link>
+            <Link to="/brands" className={navStyles.mobileLink}>
+              Brands
+            </Link>
+            <Link to="/new-releases" className={navStyles.mobileLink}>
+              New Releases
+            </Link>
+            <Link to="/sale" className={navStyles.saleLink}>
+              Sale
+            </Link>
+          </div>
+        )}
+      </div>
     </nav>
   )
 }
